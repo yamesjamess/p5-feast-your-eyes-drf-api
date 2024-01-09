@@ -1,4 +1,5 @@
 from django.db.models import Count
+from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import generics, permissions, filters
 from drf_api.permissions import IsOwnerOrReadOnly
 from .models import Post
@@ -18,8 +19,18 @@ class PostList(generics.ListCreateAPIView):
         recommends_count=Count("recommends", distinct=True),
         comments_count=Count("comment", distinct=True),
     ).order_by("-created_at")
-    filter_backends = [filters.OrderingFilter, filters.SearchFilter]
-    search_fields = ['owner__username', 'title']
+    filter_backends = [
+        filters.OrderingFilter,
+        filters.SearchFilter,
+        DjangoFilterBackend,
+    ]
+    search_fields = ["owner__username", "title"]
+    filterset_fields = [
+        "owner__profile",
+        "owner__followed__owner__profile",
+        "likes__owner__profile",
+        "recommends__owner__profile",
+    ]
     ordering_fields = [
         "likes_count",
         "recommends_count",
