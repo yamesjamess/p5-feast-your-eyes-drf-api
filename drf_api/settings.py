@@ -15,7 +15,7 @@ import os
 
 if os.path.exists('env.py'):
     import env
-    
+
 CLOUDINARY_STORAGE = {
     'CLOUDINARY_URL' : os.environ.get('CLOUDINARY_URL')
 }
@@ -34,7 +34,7 @@ SECRET_KEY = 'django-insecure-pu3%l(_l)_hd)hicx*xp^w928*b!##ymbmehxu^qvn%06k(hz3
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['8000-yamesjamess-p5feastyour-r7awurshke9.ws-eu107.gitpod.io']
 
 
 # Application definition
