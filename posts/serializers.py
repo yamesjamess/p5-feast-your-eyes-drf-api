@@ -58,7 +58,7 @@ class PostSerializer(serializers.ModelSerializer):
             "image_filter",
             "like_id",
             "recommend_id",
-            "likes_count ",
+            "likes_count",
             "recommends_count",
             "comments_count",
         ]
