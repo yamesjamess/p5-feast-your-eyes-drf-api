@@ -4,4 +4,4 @@ from rest_framework.response import Response
 
 @api_view()
 def root_route(request):
-    return Response({"message": "Welcome to Feast Your Eyes django rest framework API!"})
+    return Response({"message": "Welcome to Feast Your Eyes drf API!"})
