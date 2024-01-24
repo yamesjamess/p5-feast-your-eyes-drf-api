@@ -28,6 +28,7 @@ class Post(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     title = models.CharField(max_length=255)
+    tag = models.CharField(max_length=30, blank=True)
     content = models.TextField(blank=True)
     image = models.ImageField(upload_to='images/', default='../default_post_cmjqfa', blank=True)
     image_filter = models.CharField(
