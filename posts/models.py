@@ -27,6 +27,7 @@ class Post(models.Model):
     owner = models.ForeignKey(User, on_delete=models.CASCADE)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
+    restaurant = models.CharField(max_length=255)
     title = models.CharField(max_length=255)
     tag = models.CharField(max_length=30, blank=True)
     content = models.TextField(blank=True)
@@ -39,4 +40,4 @@ class Post(models.Model):
         ordering = ['-created_at']
         
     def __str__(self):
-        return f'{self.id} {self.title}'
+        return f"{self.id} {self.restaurant}'s {self.title}"
