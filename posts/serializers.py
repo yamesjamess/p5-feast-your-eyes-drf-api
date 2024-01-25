@@ -61,4 +61,6 @@ class PostSerializer(serializers.ModelSerializer):
             "likes_count",
             "recommends_count",
             "comments_count",
+            "restaurant",
+            "tag",
         ]

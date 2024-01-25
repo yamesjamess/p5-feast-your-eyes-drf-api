@@ -37,6 +37,7 @@ DEBUG = "DEV" in os.environ
 ALLOWED_HOSTS = [
     os.environ.get("ALLOWED_HOST"),
     "fye-drf-api-6b84783d9a37.herokuapp.com",
+    '8000-yamesjamess-p5feastyour-r7awurshke9.ws-eu107.gitpod.io'
 ]
 
 
