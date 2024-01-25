@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .model import Post
+from .models import Post
 
 @admin.site.register(Post)
 class PostAdmin(admin.ModelAdmin):
