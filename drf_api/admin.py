@@ -12,3 +12,5 @@ admin.site.register(Comment)
 admin.site.register(Like)
 admin.site.register(Follower)
 admin.site.register(Recommend)
+admin.site.register(Profile)
+
