@@ -30,6 +30,7 @@ class PostList(generics.ListCreateAPIView):
         "owner__followed__owner__profile",
         "likes__owner__profile",
         "recommends__owner__profile",
+        "posts__tag",
     ]
     ordering_fields = [
         "likes_count",
