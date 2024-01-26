@@ -1,6 +1,7 @@
 from django.db.models import Count
 from django_filters.rest_framework import DjangoFilterBackend
 from rest_framework import generics, permissions, filters
+from rest_framework.views import APIView
 from drf_api.permissions import IsOwnerOrReadOnly
 from .models import Post
 from .serializers import PostSerializer
@@ -30,7 +31,7 @@ class PostList(generics.ListCreateAPIView):
         "owner__followed__owner__profile",
         "likes__owner__profile",
         "recommends__owner__profile",
-        "tag"
+        "tag",
     ]
     ordering_fields = [
         "likes_count",
@@ -56,3 +57,16 @@ class PostDetail(generics.RetrieveUpdateDestroyAPIView):
         recommends_count=Count("recommends", distinct=True),
         comments_count=Count("comment", distinct=True),
     ).order_by("-created_at")
+
+
+class TagList(generics.ListAPIView):
+    serializer_class = PostSerializer
+
+    def get_queryset(self):
+        tag = self.kwargs["tag"]
+        return Post.objects.filter(tag__iexact=tag)  # Case-insensitive match
+
+    def list(self, request, *args, **kwargs):
+        queryset = self.get_queryset()
+        serializer = self.serializer_class(queryset, many=True)
+        return Response(serializer.data)

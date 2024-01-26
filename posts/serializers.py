@@ -64,3 +64,7 @@ class PostSerializer(serializers.ModelSerializer):
             "restaurant",
             "tag",
         ]
+
+
+class TagSerializer(serializers.Serializer):
+    tag = serializers.CharField(max_length=30)
