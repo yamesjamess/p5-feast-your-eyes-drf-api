@@ -66,7 +66,3 @@ class TagList(generics.ListAPIView):
         tag = self.kwargs["tag"]
         return Post.objects.filter(tag__iexact=tag)  # Case-insensitive match
 
-    def list(self, request, *args, **kwargs):
-        queryset = self.get_queryset()
-        serializer = self.serializer_class(queryset, many=True)
-        return Response(serializer.data)
