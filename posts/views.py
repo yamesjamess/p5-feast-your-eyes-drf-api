@@ -60,9 +60,11 @@ class PostDetail(generics.RetrieveUpdateDestroyAPIView):
 
 
 class TagList(generics.ListAPIView):
+    """
+    Retrieve posts that has the specified tag value.
+    """
     serializer_class = PostSerializer
 
     def get_queryset(self):
         tag = self.kwargs["tag"]
         return Post.objects.filter(tag__iexact=tag)  # Case-insensitive match
-
