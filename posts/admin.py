@@ -10,5 +10,5 @@ class PostAdmin(admin.ModelAdmin):
 
     list_display = ("id", "owner", "restaurant", "title", "tag", "created_at")
     list_display_links = ("restaurant", "title", "id")
-    list_filter = ('created_at', 'tag', 'owner')
-    search_fields = ('restaurant', 'title', 'tag', 'owner__username')
+    list_filter = ("created_at", "tag", "owner")
+    search_fields = ("restaurant", "title", "tag", "owner__username")

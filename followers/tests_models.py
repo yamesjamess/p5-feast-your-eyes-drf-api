@@ -10,7 +10,7 @@ class FollowerModelTest(TestCase):
         self.user2 = User.objects.create_user(username="user2", password="password2")
 
     def test_create_follower(self):
-        # Create a follower relationship
+        # Create a follower relationshipF
         follower = Follower.objects.create(owner=self.user1, followed=self.user2)
 
         retrieved_follower = Follower.objects.get(pk=follower.id)

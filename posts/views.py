@@ -63,6 +63,7 @@ class TagList(generics.ListAPIView):
     """
     Retrieve posts that has the specified tag value.
     """
+
     serializer_class = PostSerializer
 
     def get_queryset(self):
