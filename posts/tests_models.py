@@ -44,13 +44,16 @@ class PostModelTest(TestCase):
     def test_ordering(self):
         # Create multiple posts with different created_at values
         post1 = Post.objects.create(
-            owner=self.user, restaurant="Restaurant 1", title="Title 1", tag="tag1"
+            owner=self.user, restaurant="Restaurant 1", title="Title 1",
+            tag="tag1"
         )
         post2 = Post.objects.create(
-            owner=self.user, restaurant="Restaurant 2", title="Title 2", tag="tag2"
+            owner=self.user, restaurant="Restaurant 2", title="Title 2",
+            tag="tag2"
         )
         post3 = Post.objects.create(
-            owner=self.user, restaurant="Restaurant 3", title="Title 3", tag="tag3"
+            owner=self.user, restaurant="Restaurant 3", title="Title 3",
+            tag="tag3"
         )
 
         ordered_posts = Post.objects.all()

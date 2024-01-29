@@ -71,4 +71,5 @@ class CommentViewsTest(APITestCase):
         response = self.client.delete(f"/comments/{self.comment.id}/")
 
         self.assertEqual(response.status_code, status.HTTP_204_NO_CONTENT)
-        self.assertEqual(Comment.objects.filter(id=self.comment.id).exists(), False)
+        self.assertEqual(
+            Comment.objects.filter(id=self.comment.id).exists(), False)

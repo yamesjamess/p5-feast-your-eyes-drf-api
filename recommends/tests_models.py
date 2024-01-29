@@ -7,8 +7,10 @@ from .models import Recommend
 class RecommendModelTest(TestCase):
     def setUp(self):
         # Create test users
-        self.user1 = User.objects.create_user(username="user1", password="password1")
-        self.user2 = User.objects.create_user(username="user2", password="password2")
+        self.user1 = User.objects.create_user(username="user1",
+                                              password="password1")
+        self.user2 = User.objects.create_user(username="user2",
+                                              password="password2")
 
         # Create test post
         self.post = Post.objects.create(

@@ -16,7 +16,8 @@ class ProfileModelTest(TestCase):
             Profile.objects.count(), 1
         )  # Check that there are 1 profiles initially from setup
 
-        new_user = User.objects.create_user(username="newuser", password="newpassword")
+        new_user = User.objects.create_user(username="newuser",
+                                            password="newpassword")
 
         created_profile = Profile.objects.get(owner=new_user)
 
