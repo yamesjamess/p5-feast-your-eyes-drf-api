@@ -25,6 +25,7 @@ Notably, the API's capability for smooth JSON data transmission stands out, prov
 The relevant User Stories for the API are from #2 to #8. For the remaining User Stories, please refer to the Front End repository.
 
 ### User Stories :
+
 - **USER STORY (#2)** : Project Setup
 
   - As a developer I can use all the info from the requirement to set up a repo so that I can start develop to API model and the front end.
@@ -65,6 +66,7 @@ The relevant User Stories for the API are from #2 to #8. For the remaining User 
 **BE Feature (#2)** : Profile Model
 
 - The profile model includes these fileds
+
   - owner: a 1to1 field linking with User model that is created upon successful profile creation. Cascade on deletion.
   - created_at: DateTimeField with auto_now_add=True
   - updated_at: DateTimeField with auto_now=True
@@ -78,6 +80,7 @@ The relevant User Stories for the API are from #2 to #8. For the remaining User 
 **BE Feature (#3)** : Post Model
 
 - The post model includes these fileds
+
   - owner: ForeignKey field linking with User model. Cascade on deletion.
   - created_at: DateTimeField with auto_now_add=True
   - updated_at: DateTimeField with auto_now=True
@@ -94,6 +97,7 @@ The relevant User Stories for the API are from #2 to #8. For the remaining User 
 **BE Feature (#4)** : Like Model
 
 - The like model includes these fileds
+
   - owner: ForeignKey field linking with User model. Cascade on deletion.
   - post: ForeignKey field linking with Post model. Cascade on deletion.
   - created_at: DateTimeField with auto_now_add=True
@@ -104,6 +108,7 @@ The relevant User Stories for the API are from #2 to #8. For the remaining User 
 **BE Feature (#5)** : Comment Model
 
 - The comment model includes these fileds
+
   - owner: ForeignKey field linking with User model. Cascade on deletion.
   - post: ForeignKey field linking with Post model. Cascade on deletion.
   - created_at: DateTimeField with auto_now_add=True
@@ -116,6 +121,7 @@ The relevant User Stories for the API are from #2 to #8. For the remaining User 
 **BE Feature (#6)** : Recommended Model
 
 - The recommend model includes these fileds
+
   - owner: ForeignKey field linking with User model. Cascade on deletion.
   - post: ForeignKey field linking with Post model. Cascade on deletion.
   - created_at: DateTimeField with auto_now_add=True
@@ -126,13 +132,13 @@ The relevant User Stories for the API are from #2 to #8. For the remaining User 
 **BE Feature (#7)** : Follower Model
 
 - The follower model includes these fileds
+
   - owner: ForeignKey field linking with User model. Cascade on deletion.
   - followed: ForeignKey field linking with User model. Cascade on deletion.
   - created_at: DateTimeField with auto_now_add=True
 
 - The follower list view accepts List and Create actions. Create is available if authenticated.
 - The follower detail view accepts Retrieve and Destroy actions. Destroy is available if is_owner.
-
 
 ### Feature that could be implemented in the future
 
@@ -338,6 +344,7 @@ The EPICs, User Stories, and Kanban Board can be viewd here : [Feast Your Eyes A
 DB tests were run in the development environment against a local SQLite3 database.
 
 ### Known Bugs
+
 ### Unfixed Bugs
 
 - /posts cannot be accessed in the development environment.
@@ -374,14 +381,17 @@ DB tests were run in the development environment against a local SQLite3 databas
 ### Code
 
 - Majority of the code comes from the Code Institute's Advanced Front End Course - Django REST Framework walkthrough
-- The rest of the code has been adapted and created by the developer.
+- The rest of the code has been adapted from Django REST Framework walkthrough and created by the developer.
+- Django test: [TransactionManagementError](https://stackoverflow.com/questions/43978468/django-test-transactionmanagementerror-you-cant-execute-queries-until-the-end)
 
 ### Content
-* Information on the website is created by the developer.
-  * Inpsiration from [Samsung Food](https://samsungfood.com/)
-  * The story, all names, characters, and incidents portrayed in this project are fictitious.
-  * This is for educational purpose only.
+
+- Information on the website is created by the developer.
+  - Inpsiration from [Samsung Food](https://samsungfood.com/)
+  - The story, all names, characters, and incidents portrayed in this project are fictitious.
+  - This is for educational purpose only.
 
 ### Achknowledgements
-* Thank you to my mentor, Mo Shami, for the help with this project.
-* Special thanks to all the tutors at Code Institute for all your help!
+
+- Thank you to my mentor, Mo Shami, for the help with this project.
+- Special thanks to all the tutors at Code Institute for all your help!

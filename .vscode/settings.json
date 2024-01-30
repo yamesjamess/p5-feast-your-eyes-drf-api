@@ -26,5 +26,8 @@
    "editor.defaultFormatter": "HookyQR.beautify",
    "[python]": {
       "editor.defaultFormatter": "ms-python.black-formatter"
+   },
+   "[markdown]": {
+      "editor.defaultFormatter": "esbenp.prettier-vscode"
    }
 }
